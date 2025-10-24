@@ -41,6 +41,7 @@ void insertion_sort(int *a, int n){
     }
     a[j + 1] = value;
     display(a,n);
+    
   }
 }
 
