@@ -4,7 +4,7 @@ void display(int *a,int n){
     int i;
 
     for(i=0; i<n; i++){
-        cout<<a[i]<<" ";
+        cout<<setw(5)<<a[i];
     }
     cout<<endl;
   
