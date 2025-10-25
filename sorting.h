@@ -35,7 +35,7 @@ void insertion_sort(int *a, int n){
   int i, j, value;
   for(i = 1; i < n; i++){
     value = a[i];
-    for (j = i - 1; j >= 0 && a[j] < n; j--){
+    for (j = i - 1; j >= 0 && a[j] < value; j--){
       a[j + 1] = a[j];
       display(a,n);
     }
@@ -60,7 +60,7 @@ void bubble_sort(int *a, int n){
  
   for(i = 0; i < n-1; i++){
     sorted = 1;
-    for(j = i; j < n-1-i; j++){
+    for(j = 0; j < n-1-i; j++){
       if(a[j] < a[j+1]){
         swap(a[j], a[j+1]);
         sorted = 0;
