@@ -29,6 +29,7 @@ void selection_sort(int *a, int n)
     swap(a[j],a[mi]);
     display(a,n);
   }
+  //display(a,n);
 } 
 
 void insertion_sort(int *a, int n){
@@ -43,6 +44,7 @@ void insertion_sort(int *a, int n){
     display(a,n);
     
   }
+  //display(a,n);
 }
 
 
@@ -71,6 +73,42 @@ void bubble_sort(int *a, int n){
       break;
     }
   }
+  //display(a,n);
+}
+
+int partition_desc(int *a, int low, int high, int n){
+  int pivot = a[high];    // choose last element as pivot
+  int i = low - 1;
+
+  for(int j = low; j < high; ++j){
+    // For DESC: keep larger elements on the left
+    if(a[j] >= pivot){
+      ++i;
+      if(i != j){
+        int t = a[i]; a[i] = a[j]; a[j] = t;
+        display(a, n);      
+      }
+    }
+  }
+  if(i + 1 != high){
+    int t = a[i + 1]; a[i + 1] = a[high]; a[high] = t;
+    display(a, n);
+  }
+  return i + 1;
+}
+
+void quick_sort_rec(int *a, int low, int high, int n){
+  if(low < high){
+      int p = partition_desc(a, low, high, n);
+      quick_sort_rec(a, low, p - 1, n);
+      quick_sort_rec(a, p + 1, high, n);
+  }
+}
+
+void quick_sort(int *a, int n){
+  if(n <= 1) return;
+  quick_sort_rec(a, 0, n - 1, n);
+  //display(a,n);
 }
 
 

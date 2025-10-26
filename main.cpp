@@ -27,6 +27,9 @@ auto start = chrono::high_resolution_clock::now();
   else if(strcmp(argv[1],"selection") == 0){
     selection_sort(a,n);
   }
+  else if(strcmp(argv[1],"quick") == 0){
+    quick_sort(a,n);
+  }
   else;
 
   auto end = chrono::high_resolution_clock::now();
